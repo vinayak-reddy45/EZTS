@@ -2,32 +2,31 @@ package hospital;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 String n,g;
 int ag;
 boolean flag=true;
-while(flag=true)
+while(flag==true)
 {
 	
-}
-        System.out.println("Input Doctor Details:");
-        Doctor doctor = Doctor.Doctor(scanner);
+        System.out.println("Enter 1 to enter doctor details 2 for nurse and 3 for patient:");
+        int a=sc.nextInt();
+        if(a==1)
+        {
+        	System.out.println("Enter your name");
+        	n=sc.next();
+        	System.out.println("Enter your age");
+        	ag=sc.nextInt();
+        	System.out.println("Enter your gender");
+        	g=sc.next();
+        	System.out.println("Enter doctor speciality");
+        	String sp=sc.next();
+        	Doctor d=new Doctor(n,g,ag,sp);
+        	d.dDisplay();	
+        	
+        }
+       
 
-        System.out.println("\nInput Patient Details:");
-        Patient patient = Patient.Patient(scanner);
-
-        System.out.println("\nInput Nurse Details:");
-        Nurse nurse = Nurse.inputNurseDetails(scanner);
-
-        System.out.println("\nDoctor Details:");
-        doctor.displayDoctorDetails();
-
-        System.out.println("\nPatient Details:");
-        patient.displayPatientDetails();
-
-        System.out.println("\nNurse Details:");
-        nurse.displayNurseDetails();
-
-        scanner.close();
+        sc.close();
     }
-}
+}}
